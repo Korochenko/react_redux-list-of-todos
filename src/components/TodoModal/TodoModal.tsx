@@ -41,7 +41,6 @@ export const TodoModal: React.FC = () => {
   const handleClose = () => {
     dispatch(setCurrentTodo(null));
   };
-  // fas
 
   const isUserReady = !loading && user && user.id === currentTodo.userId;
 
@@ -57,7 +56,7 @@ export const TodoModal: React.FC = () => {
               className="modal-card-title has-text-weight-medium"
               data-cy="modal-header"
             >
-              Todo {currentTodo.id}
+              Todo #{currentTodo.id}
             </div>
 
             {/* eslint-disable-next-line jsx-a11y/control-has-associated-label */}
