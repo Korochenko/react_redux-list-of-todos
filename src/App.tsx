@@ -32,6 +32,12 @@ export const App = () => {
     <>
       <div className="section">
         {loading && <Loader />}
+        {error && (
+          <div className="notification is-danger">
+            {error}
+            <button className="delete" onClick={() => setError(null)} />
+          </div>
+        )}
         {!loading && (
           <div className="container">
             <div className="box">

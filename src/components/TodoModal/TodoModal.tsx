@@ -48,6 +48,12 @@ export const TodoModal: React.FC = () => {
     <div className="modal is-active" data-cy="modal">
       <div className="modal-background" onClick={handleClose} />
       {!isUserReady && <Loader />}
+      {error && (
+        <div className="notification is-danger">
+          {error}
+          <button className="delete" onClick={() => SetError(null)} />
+        </div>
+      )}
 
       {isUserReady && (
         <div className="modal-card">
@@ -59,7 +65,6 @@ export const TodoModal: React.FC = () => {
               Todo #{currentTodo.id}
             </div>
 
-            {/* eslint-disable-next-line jsx-a11y/control-has-associated-label */}
             <button
               type="button"
               className="delete"
