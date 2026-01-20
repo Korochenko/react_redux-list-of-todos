@@ -1,4 +1,3 @@
-/* eslint-disable */
 import React from 'react';
 import { useAppDispatch, useAppSelector } from '../../app/hooks';
 import { Todo } from '../../types/Todo';
@@ -15,6 +14,7 @@ export const TodoList: React.FC = () => {
       if (status === 'completed') {
         return filteredTodo.completed;
       }
+
       if (status === 'active') {
         return !filteredTodo.completed;
       }
